@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+}
+:root {
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5E63F;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #F8C671;
+}
+
+body {
+  font-size: 1.6rem;
+
+  display: grid;
+  grid-template-areas: "image-faq faq";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+}
+
+aside {
+  grid-area: image-faq;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  border-right: 1px solid #DFD245;
+  background-image: url(./assets/img/background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+aside img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+
+  border: 4px solid transparent;
+  background: linear-gradient(#F8C671, #A01216, #FCF1E0)
+  padding-box, linear-gradient(260deg, #F8C671, #A01216, #FCF1E0) border-box;
+}
+
+aside p {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #A01216;
+}
+
+aside span {
+  font-weight: 700;
+}
+
+nav {
+  padding: 20px;
+  grid-area: faq;
+  background-color: #F5E63F;
+  min-height: 100vh;
+}
+
+.accordion {
+  background-color: #f7f090;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.accordion-item {
+  background-color: #FCF1E0;
+  border: 1px solid #aca022;
+  border-radius: 5px;
+
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-header {
+  color: #A01216;
+  padding: .5rem 1rem;
+  font-size: 2.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.accordion-content {
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: #A01216;
+}
+
+.accordion-item--active .accordion-header {
+  background-color: #F5E63F;
+}
+
+.accordion-item--active .accordion-content {
+  transition: 0.5s;
+}
+
+.accordion-item--closed .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accordion-content {
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  aside {
+    border-bottom: 1px solid #DFD245;
+    background-size: cover;
+    padding: 1.6rem 0;
+    gap: 16px;
+  }
+
+  aside img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  aside p {
+    font-size: 1.8rem;
+    text-align: center;    
+  }
+
+  nav {
+    padding: 0 auto;
+  }
+
+}
