@@ -71,6 +71,10 @@ nav {
   grid-area: faq;
   background-color: #F5E63F;
   min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .accordion {
@@ -147,7 +151,11 @@ nav {
   }
 
   nav {
-    padding: 0 auto;
+    position: relative;
   }
 
+  .accordion {
+    position: absolute;
+    top: 10px;
+  }
 }
